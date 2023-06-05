@@ -22,6 +22,8 @@ resource "aws_vpc" "snapshot" {
   tags = {
     name = "${var.prefix}-vpc-${var.region}"
     environment = "secdemo"
+    owner = "test"
+    ttl = "48"
   }
 }
 

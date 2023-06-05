@@ -1,9 +1,10 @@
 terraform {
-  backend "remote" {
-    hostname = "app.terraform.io"
-    organization = "snapshot_tf_serverless"
+  cloud {
+    hostname = "tfe.lgcns.idtplateer.com"
+    organization = "tfe-gh-action"
+
     workspaces {
-      name = "vault-gh-actions"
+      name = "github-action"
     }
   }
 }
