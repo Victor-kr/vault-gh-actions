@@ -16,7 +16,7 @@ jobs:
         id: import
         uses: hashicorp/vault-action@v2.4.0
         with:
-          url: https://127.0.0.1:8200
+          url: https://jc.vault.idtplateer.com:8200 
           tlsSkipVerify: true
           token: ${{ secrets.VAULT_TOKEN }}
           secrets: |
@@ -59,7 +59,7 @@ jobs:
         id: import
         uses: hashicorp/vault-action@v2.4.0
         with:
-          url: https://127.0.0.1:8200
+          url: https://jc.vault.idtplateer.com:8200
           tlsSkipVerify: true
           token: ${{ secrets.VAULT_TOKEN }}
           secrets: |
@@ -135,7 +135,7 @@ jobs:
         id: reimport
         uses: hashicorp/vault-action@v2.4.0
         with:
-          url: https://127.0.0.1:8200
+          url: https://jc.vault.idtplateer.com:8200
           tlsSkipVerify: true
           token: ${{ secrets.VAULT_TOKEN }}
           secrets: |
@@ -155,7 +155,7 @@ jobs:
          ./tfh pushvars -org ${{ env.TF_ORGANIZATION }} -name 'vault-gh-actions' -token ${{ secrets.TF_API_TOKEN }} -env-var 'AWS_ACCESS_KEY_ID=AWS_ACCESS_KEY_ID' -overwrite-env AWS_ACCESS_KEY_ID
          ./tfh pushvars -org ${{ env.TF_ORGANIZATION }} -name 'vault-gh-actions' -token ${{ secrets.TF_API_TOKEN }} -senv-var 'AWS_SECRET_ACCESS_KEY=AWS_SECRET_ACCESS_KEY' -overwrite-env AWS_SECRET_ACCESS_KEY
          ./tfh pushvars -org ${{ env.TF_ORGANIZATION }} -name 'vault-gh-actions' -token ${{ secrets.TF_API_TOKEN }} -senv-var 'AWS_SESSION_TOKEN=AWS_SESSION_TOKEN' -overwrite-env AWS_SESSION_TOKEN
-         export VAULT_ADDR=https://127.0.0.1:8200
+         export VAULT_ADDR=https://jc.vault.idtplateer.com:8200
          export VAULT_TOKEN=${{ secrets.VAULT_TOKEN }}
 #         vault lease revoke -sync -prefix ${{ env.STS_PREFIX }}
 #         vault lease revoke -sync -prefix terraform/creds/my-user
